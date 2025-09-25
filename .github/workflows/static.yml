@@ -39,7 +39,6 @@ jobs:
         with:
           path: |
             index.html
-            index.css
             js
             img
 
