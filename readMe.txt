@@ -1,3 +1,4 @@
+Steps:
 Map Creation:
 	- Game assets and downloads
 	- Create a path
@@ -14,3 +15,5 @@ Tower Defense Basics:
 	- Game over
 	- Resources
 	- Launch
+
+Learned source: https://www.youtube.com/watch?v=C4_iRLlPNFc
