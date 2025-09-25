@@ -1,7 +1,7 @@
 
 class Building extends Sprite {
     constructor({position = {x: 0 , y: 0}}) {
-        super({position, imageSrc: 'img/tower.png', 
+        super({position, imageSrc: './img/tower.png', 
             frames: { max : 19 }, offset: {x: 0, y: -80}})
 
         // this.position = position;

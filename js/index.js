@@ -142,7 +142,7 @@ function animate() {
                 explosions.push(
                     new Sprite({ 
                         position: {x: projectile.position.x, y: projectile.position.y}, 
-                        imageSrc: 'img/explosion.png', 
+                        imageSrc: './img/explosion.png', 
                         frames: {max: 4},
                         offset: {x: 0, y: 0}
                     })
