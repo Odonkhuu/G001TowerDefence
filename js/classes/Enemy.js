@@ -42,7 +42,7 @@ class Enemy extends Sprite {
             x: this.position.x + this.width / 2,
             y: this.position.y + this.height / 2
         }
-        const speed = 3;
+        const speed = 20;
         
         this.velocity.x = Math.cos(angle) * speed;
         this.velocity.y = Math.sin(angle) * speed;

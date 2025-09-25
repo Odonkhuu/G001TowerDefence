@@ -1,0 +1,164 @@
+/* Global */
+:root{
+    --bg:#000;
+    --card:#0b0b0f;
+    --muted:#bfbfc4;
+    --accent:#ffd34d;
+    --primary:#00d4ff;
+    --text:#fff;
+    --glass: rgba(255,255,255,0.06);
+  }
+  
+  *{ box-sizing:border-box; }
+  html,body{ height:100%; }
+  body{
+    margin:0;
+    font-family: "Bitcount Grid Single Ink", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+  }
+  
+  /* Layout */
+  .container{
+    width: min(1100px, 92vw);
+    margin: 0 auto;
+    padding: 32px 0 64px;
+  }
+  
+  /* Header */
+  .site-header{
+    position: sticky;
+    top:0;
+    backdrop-filter: blur(8px);
+    background: linear-gradient(to bottom, rgba(0,0,0,.65), transparent);
+    z-index: 10;
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 14px 4vw;
+    border-bottom: 1px solid var(--glass);
+  }
+  .brand{ display:flex; align-items:center; gap:10px; }
+  .brand .title{ font-weight:800; letter-spacing:.5px; font-size:20px; }
+  .brand .coin{ width:28px; height:28px; }
+  
+  .site-header nav a{
+    color: var(--muted);
+    text-decoration:none;
+    margin-left: 18px;
+    font-weight:600;
+  }
+  .site-header nav a:hover{ color: var(--text); }
+  
+  /* Hero */
+  .hero{
+    display:grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: 24px;
+    align-items:center;
+    padding: 56px 0;
+  }
+  .hero h1{ font-size: clamp(28px, 3.4vw, 46px); margin:0 0 10px; }
+  .hero p{ color: var(--muted); margin:0 0 22px; }
+  .hero .cta{ display:flex; gap:12px; }
+  .hero-art{
+    justify-self:end;
+    padding: 10px;
+    border-radius: 18px;
+    background: radial-gradient(60% 60% at 40% 40%, rgba(255,211,77,.08), rgba(255,211,77,0) 70%);
+    outline: 1px solid var(--glass);
+  }
+  #heroCanvas{ display:block; width:360px; height:220px; background: #070707; border-radius: 12px; outline: 1px solid var(--glass); }
+  
+  /* Cards */
+  .card{
+    background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+    border: 1px solid var(--glass);
+    border-radius: 16px;
+    padding: 22px 20px;
+    margin: 24px 0;
+  }
+  .grid.two{
+    display:grid; grid-template-columns: 1fr 1fr; gap: 14px;
+  }
+  .algo-list li{ margin: 6px 0; }
+  
+  /* Buttons */
+  .btn{
+    appearance: none;
+    border: 1px solid var(--glass);
+    background: #111418;
+    color: var(--text);
+    padding: 10px 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 800;
+    text-decoration: none;
+  }
+  .btn:hover{ transform: translateY(-1px); }
+  .btn-primary{
+    background: linear-gradient(180deg, #1e90ff, #1570c6);
+    border-color: transparent;
+  }
+  .btn-ghost{ background: transparent; }
+  
+  
+  /* Footer */
+  .site-footer{ padding: 40px 4vw 60px; color: var(--muted); text-align:center; }
+  
+  /* Play page */
+  .play-header{
+    display:flex; align-items:center; gap:12px; padding: 16px 4vw;
+    border-bottom: 1px solid var(--glass);
+  }
+  .play-header h1{ margin:0; font-size: 20px; letter-spacing:.5px; }
+  
+  .game-wrap{
+    margin: 20px auto;
+    width: 1280px; height: 768px;
+    position: relative;
+    border-radius: 16px;
+    outline: 1px solid var(--glass);
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,.35);
+  }
+  canvas{ display:block; width:100%; height:100%; background:#000; }
+  
+  .hud{
+    position:absolute; top:10px; right:12px; z-index: 5;
+    display:flex; gap: 12px; align-items:center;
+    padding: 8px 10px;
+    background: linear-gradient(to left bottom, rgba(0,0,0,0.85), rgba(0,0,0,0.0));
+    border-radius: 12px;
+  }
+  .hud-item{ display:flex; align-items:center; gap:8px; font-weight:900; font-size: 20px; -webkit-text-stroke: .5px #000; }
+  .hud .coin{ width:26px; height:26px; }
+  .hud .heart{ width:28px; height:28px; fill:#ff3b3b; }
+  
+  .overlay{
+    position:absolute; inset:0; z-index:10;
+    background: rgba(0,0,0,.45);
+    display:grid; place-items:center;
+  }
+  .overlay-card{
+    background: #0b0f15;
+    border: 1px solid var(--glass);
+    border-radius: 16px;
+    padding: 24px;
+    text-align:center;
+    box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  }
+  .overlay-card h2{ margin:0 0 12px; font-size: 36px; }
+  .overlay-card .actions{ display:flex; gap:10px; justify-content:center; }
+/* Өөрийн өгсөн загварыг хадгална */
+.logo-canvas-wrapper{
+  display:flex;
+  align-items:center;
+  justify-content:center;   /* << төвд байрлуулна */
+  width:600px;
+  height:100px;
+  overflow:hidden;
+  margin-inline:auto;       /* << эцэг дотороо төвд (хэвтээ) */
+  max-width:100%;           /* << жижиг дэлгэц дээр бутрахгүй */
+}
+
+
+  
